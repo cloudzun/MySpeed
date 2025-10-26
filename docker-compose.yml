@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  myspeed:
+    build: .
+    container_name: myspeed
+    restart: unless-stopped
+    ports:
+      - "5216:5216"
+    volumes:
+      - ./data:/myspeed/data
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Shanghai
